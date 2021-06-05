@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, List } from 'antd';
+import { Col, List } from 'antd';
 import { AppContext } from '../../App';
 
 
