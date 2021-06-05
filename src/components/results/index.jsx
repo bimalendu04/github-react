@@ -16,7 +16,7 @@ function Result() {
                 updateState({ userDetails: data, userLoading: false });
             });
             Service.getRepos(searchedText).then((data) => {
-                updateState({ repos: data, userLoading: false });
+                updateState({ repos: data });
             });
         }
         // eslint-disable-next-line

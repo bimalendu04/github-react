@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Space, Row } from 'antd';
+import { Input, Space, Row, Col } from 'antd';
 import { AppContext } from '../../App';
 
 const { Search } = Input;
@@ -10,9 +10,11 @@ function SearchComponent() {
     const onSearch = value => updateState({ searchedText: value });
 
     return <Row gutter={8}>
-        <Space direction="vertical">
-            <Search placeholder="Enter github username" onSearch={onSearch} />
-        </Space>
+        <Col span={12} sm={24}>
+            <Space direction="vertical">
+                <Search placeholder="Enter github username" onSearch={onSearch} />
+            </Space>
+        </Col>
     </Row>
 }
 
