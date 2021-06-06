@@ -1,6 +1,6 @@
 .main-container {
     display: flex;
-    height: calc(100% - 106px);
+    height: calc(100% - 131px);
 }
 
 .sider {
@@ -53,6 +53,5 @@
     .main-container {
         display: block;
         overflow:auto;
-        height: calc(100% - 110px);
     }
 }
