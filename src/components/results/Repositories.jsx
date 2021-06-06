@@ -25,7 +25,7 @@ function UserDetails() {
         })
         }
         {state.repos &&
-            state.repos.length == 0 &&
+            state.repos.length === 0 &&
             <Col className="mar-auto mar-tp-25">
                 <Empty
                     description={
