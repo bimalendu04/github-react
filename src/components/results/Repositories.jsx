@@ -13,7 +13,7 @@ function UserDetails() {
             renderItem={repo => (
                 <List.Item>
                     <List.Item.Meta
-                        title={<a href={repo.html_url} target="_blank">{repo.name}</a>}
+                        title={<a href={repo.html_url} target="_blank" rel="noreferrer">{repo.name}</a>}
                         description={<>
                             <div>{repo.description}</div>
                             <div>{repo.watchers}</div></>}
