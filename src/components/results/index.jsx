@@ -1,10 +1,9 @@
 import React from 'react';
-import { Row } from 'antd';
 import { AppContext } from '../../App';
 import * as Service from '../../services/Service';
 import UserDetails from './UserDetails';
 import Repositories from './Repositories';
-
+import './results.css';
 
 function Result() {
     const { state, updateState } = React.useContext(AppContext);
@@ -12,24 +11,24 @@ function Result() {
         const searchedText = state.searchedText;
         if (searchedText) {
             updateState({ userLoading: true });
-            Service.getUserDetails(searchedText).then((data) => {
-                updateState({ userDetails: data, userLoading: false });
-            });
-            Service.getRepos(searchedText).then((data) => {
-                updateState({ repos: data });
-            });
+            let promises = [];
+            promises.push(Service.getUserDetails(searchedText));
+            promises.push(Service.getRepos(searchedText));
+            Promise.all(promises).then((data) => {
+                updateState({ userDetails: data[0], repos: data[1], userLoading: false });
+            })
         }
         // eslint-disable-next-line
     }, [state.searchedText]);
 
-    return <>
-        <Row>
+    return <div className="main-container">
+        {state && state.userDetails && <div className="sider">
             <UserDetails />
-        </Row>
-        <Row>
+        </div>}
+        {state && state.repos && <div className="content-repositories">
             <Repositories />
-        </Row>
-    </>
+        </div>}
+    </div>
 }
 
 export default React.memo(Result);

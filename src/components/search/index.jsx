@@ -1,6 +1,7 @@
 import React from 'react';
-import { Input, Space, Row, Col } from 'antd';
+import { Input, Row, Col, Divider } from 'antd';
 import { AppContext } from '../../App';
+import './search.css';
 
 const { Search } = Input;
 
@@ -10,11 +11,10 @@ function SearchComponent() {
     const onSearch = value => updateState({ searchedText: value });
 
     return <Row gutter={8}>
-        <Col span={12} sm={24}>
-            <Space direction="vertical">
-                <Search placeholder="Enter github username" onSearch={onSearch} />
-            </Space>
+        <Col className="mar-auto mar-tp-25" md={12} sm={24}>
+                <Search placeholder="Enter github username" onSearch={onSearch}  />
         </Col>
+        <Divider></Divider>
     </Row>
 }
 

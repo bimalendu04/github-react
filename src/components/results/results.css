@@ -1,0 +1,54 @@
+.main-container {
+    display: flex;
+    height: calc(100% - 106px);
+}
+
+.sider {
+    width: 30%;
+    background-color: wheat;
+    padding: 20px;
+}
+.avatar-container {
+    display: flex;
+    justify-content: center;
+}
+.content-repositories {
+    width: calc(70% - 10px);
+    margin-left: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.name {
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 20px;
+    justify-content: center;
+}
+.bio {
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.repo-card {
+    margin: 10px;
+}
+
+.description-repo {
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .sider {
+        width: 100%;
+    }
+    .content-repositories {
+        width: 100%;
+        margin-left: 0px;
+        overflow: hidden;
+    }
+    .main-container {
+        display: block;
+        overflow:auto;
+        height: calc(100% - 110px);
+    }
+}
