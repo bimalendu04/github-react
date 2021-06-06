@@ -26,12 +26,20 @@
     justify-content: center;
 }
 .bio, .view-url {
-    margin-top: 20px;
     justify-content: center;
 }
 
+.bio {
+    margin-top: 10px;
+}
+
+.view-url {
+    margin-top: 20px;
+}
+
 .view-url span {
-    color: #FF5733;
+    color: #001529;
+    font-weight: 600;
     cursor: pointer;
 }
 
