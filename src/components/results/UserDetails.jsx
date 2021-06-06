@@ -16,8 +16,8 @@ function UserDetails() {
             <Row className="name">
                 <div>{state.userDetails.name}</div>
             </Row>
-            <Row>
-                <div className="bio">{state.userDetails.bio}</div>
+            <Row className="bio">
+                <Col>{state.userDetails.bio}</Col>
             </Row>
             <Row className="view-url">
                 <Col>
