@@ -1,8 +1,7 @@
 import React from 'react';
-import { Avatar, Image, Row } from 'antd';
+import { Avatar, Image, Row, Col } from 'antd';
 import './results.css';
 import { AppContext } from '../../App';
-
 
 function UserDetails() {
     const { state } = React.useContext(AppContext);
@@ -19,6 +18,11 @@ function UserDetails() {
             </Row>
             <Row>
                 <div className="bio">{state.userDetails.bio}</div>
+            </Row>
+            <Row className="view-url">
+                <Col>
+                    <span onClick={() => window.open(state.userDetails.html_url)}>View Profile</span>
+                </Col>
             </Row>
         </>
         }

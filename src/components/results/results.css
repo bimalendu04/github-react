@@ -11,6 +11,7 @@
 .avatar-container {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 .content-repositories {
     width: calc(70% - 10px);
@@ -24,9 +25,14 @@
     margin-top: 20px;
     justify-content: center;
 }
-.bio {
+.bio, .view-url {
     margin-top: 20px;
     justify-content: center;
+}
+
+.view-url span {
+    color: #FF5733;
+    cursor: pointer;
 }
 
 .repo-card {
