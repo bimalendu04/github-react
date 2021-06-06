@@ -8,7 +8,7 @@ function UserDetails() {
     const { state } = React.useContext(AppContext);
     return <Row gutter={16}>
         {state.repos && state.repos.length && state.repos.sort((a, b) => a.watchers - b.watchers).map(repo => {
-            return <Col span={8}>
+            return <Col xs={24} sm={12} md={8} lg={8} xl={6}>
                 <Card className="repo-card" title={<a href={repo.html_url} target="_blank" rel="noreferrer">{repo.name}</a>} bordered={false}>
                     <Tooltip title={repo.description}>
                         <TextTruncate
