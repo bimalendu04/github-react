@@ -37,6 +37,10 @@
     margin-top: 10px;
 }
 
+.no-data {
+    margin: auto;
+}
+
 @media screen and (max-width: 768px) {
     .sider {
         width: 100%;

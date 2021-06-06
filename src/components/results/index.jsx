@@ -4,6 +4,7 @@ import * as Service from '../../services/Service';
 import UserDetails from './UserDetails';
 import Repositories from './Repositories';
 import './results.css';
+import { Result as ShowError } from 'antd';
 
 function Result() {
     const { state, updateState } = React.useContext(AppContext);
@@ -15,7 +16,9 @@ function Result() {
             promises.push(Service.getUserDetails(searchedText));
             promises.push(Service.getRepos(searchedText));
             Promise.all(promises).then((data) => {
-                updateState({ userDetails: data[0], repos: data[1], userLoading: false });
+                updateState({ error: false, userDetails: data[0], repos: data[1], userLoading: false });
+            }).catch((error) => {
+                updateState({ error: true, userLoading: false });
             })
         }
         // eslint-disable-next-line
@@ -28,6 +31,10 @@ function Result() {
         {state && state.repos && <div className="content-repositories">
             <Repositories />
         </div>}
+        {state && state.error && <ShowError
+            status="warning"
+            title="Something went wrong."
+        />}
     </div>
 }
 

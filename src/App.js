@@ -14,7 +14,8 @@ const App = () => {
     searchedText: null,
     userDetails: null,
     userLoading: false,
-    repos: null
+    repos: null,
+    error: false
   });
 
   const contextValue = React.useMemo(() => {

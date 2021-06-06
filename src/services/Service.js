@@ -6,8 +6,7 @@ const getUserDetails = (userName) => {
             return response.data;
         })
         .catch((error) => {
-            // handle error
-            console.log(error);
+            return {error: true, message: error};
         });
 };
 
@@ -17,8 +16,7 @@ const getRepos = (userName) => {
             return response.data;
         })
         .catch((error) => {
-            // handle error
-            console.log(error);
+            return {error: true, message: error};
         });
 };
 
